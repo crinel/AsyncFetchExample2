@@ -1,7 +1,11 @@
 function getUser(userId, callback) {
-    fetch('https://jsonplaceholder.typicode.com/users/' + userId)
-    .then(response => response.json())
-    .then(json => callback(json))
+    if(userId) {
+        fetch('https://jsonplaceholder.typicode.com/users/' + userId)
+        .then(response => response.json())
+        .then(json => callback(json))
+    } else {
+        throw new Error("please provide a user id !");
+    }
 }
 
 function getUserLastPost(userId, callback){
