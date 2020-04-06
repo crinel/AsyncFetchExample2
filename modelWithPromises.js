@@ -30,8 +30,7 @@ function getUserToDos(userId){
 
 var userId = 1;
 
-
-getUser().then( user => {
+getUser(userId).then( user => {
     console.log("the user ", user); 
     return getUserPosts(user.id);
 }).then( posts => {
